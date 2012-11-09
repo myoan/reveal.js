@@ -1,3 +1,22 @@
+/* .reveal #bpmn {
+	background: #ffffff;
+	border-style: solid;
+	border-width: 2px;
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.reveal .slides section #bpmn .bpmn_node {
+	position: absolute;
+	background: #ffffff;
+	border-style: solid;
+	border-width: 2px;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+} */
+
 .reveal #bpmn {
 	background: #ffffff;
 	border-style: solid;
