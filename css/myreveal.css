@@ -60,7 +60,7 @@ body .reveal .slides #title h3 {
 }
 
 body .reveal .slides #demo_overview {
-	position: absolute;
+	position: relative;
 	overflow: visible;
 	float: left;
 	left: 50%;

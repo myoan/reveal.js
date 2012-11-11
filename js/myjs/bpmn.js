@@ -25,8 +25,10 @@ BPMN.prototype = {
     createLastChild($ret, 'p', name);
     $ret.css({
       'top': (y - $ret.height()/2) + 'px',
-      'left': (x - $ret.width()/2) + 'px'
+      'left': x + 'px'
     });
+    y = y - $ret.height()/2
+    console.log('x = ' + x + ' y = ' + y);
     $ret.click(function() {
       Reveal.slide(4, $('#bpmn').children().index(this) - 1);
     });
@@ -34,13 +36,15 @@ BPMN.prototype = {
     return $ret;
   },
   connectTo: function(to, from) {
-    var to_img = to.find('img');
+/*    var to_img = to.find('img');
     var from_img = from.find('img');
     var x1 = parseInt(to.css('left'));
     var y1 = parseInt(to.css('top'));
     var x2 = parseInt(from.css('left'));
     var y2 = parseInt(from.css('top'));
-    var l = this.$dom.svg('get').line(this.line, x1, y1 - 40, x2, y2 - 40);
+    var l = this.$dom.svg('get').line(this.line, x1, y1 - 40, x2, y2 - 40);*/
+	  var l = this.$dom.svg('get').line(this.line, to, 300, from, 300);
+	  console.log('to = ' + to + ' from = ' + from);
   },
   resetAnimation: function($node) {
     if($node !== undefined) {
@@ -75,11 +79,18 @@ BPMN.prototype = {
 function BPMN_init(argument) {
   var bpmn = new BPMN();
   bpmn.init();
-  var $node_a = bpmn.setNode(200, 400, TASK_A.name, parseInt(TASK_A.idx));
+/*  var $node_a = bpmn.setNode(200, 400, TASK_A.name, parseInt(TASK_A.idx));
   var $node_b = bpmn.setNode(450, 400, TASK_B.name, parseInt(TASK_B.idx));
-  var $node_c = bpmn.setNode(700, 400, TASK_C.name, parseInt(TASK_C.idx));
-  bpmn.connectTo($node_a, $node_b);
-  bpmn.connectTo($node_b, $node_c);
+  var $node_c = bpmn.setNode(700, 400, TASK_C.name, parseInt(TASK_C.idx));*/
+  var sw = screen.width/3;
+  console.log('sw = '+ sw);
+
+  var $node_a = bpmn.setNode(sw-250, 400, TASK_A.name, parseInt(TASK_A.idx));
+  var $node_b = bpmn.setNode(sw, 400, TASK_B.name, parseInt(TASK_B.idx));
+  var $node_c = bpmn.setNode(sw+250, 400, TASK_C.name, parseInt(TASK_C.idx));
+  bpmn.connectTo($node_a.offset().left - $('#bpmn').offset().left, $node_c.offset().left - $('#bpmn').offset().left);
+/*  bpmn.connectTo($node_a, $node_b);
+  bpmn.connectTo($node_b, $node_c);*/
   //BPMN_stat(bpmn);
 }
 
