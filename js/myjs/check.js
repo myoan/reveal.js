@@ -64,15 +64,17 @@ function make_risk_table(data, dataType) {
 
 		if (words == "意図しないプロセスを殺してしまう") {
 			$new_textarea.attr("value", "運用者に確認する機構を用意する");
+			$elem.addClass("success");
 		}
 		else if (words == "発行するシグナルの種類を間違えてしまう") {
 			$new_textarea.attr("value", "事前にソフトウェアテストを行う");
+			$elem.addClass("success");
 		}
 		else if (words == "プロセスを操作する権限がない") {
-			$new_textarea.attr("value", "");
+//			$new_textarea.attr("value", "");
 		}
 		else if (words == "プロセスでの作業データが削除されてしまう") {
-			$new_textarea.attr("value", "");
+//			$new_textarea.attr("value", "");
 		}
 
 		$("#risk_table_deos").children("tbody").append($elem);
