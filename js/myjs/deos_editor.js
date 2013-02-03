@@ -282,7 +282,7 @@ function createEditor_deos2($dom) {
 						case "StartTask":
 							break;
 						case "EndTask":
-							spinner_deos.stop();
+							spinner_deos2.stop();
 							script_flag = false;
 							Matrix_animation_deos();
 							return false;
@@ -386,7 +386,7 @@ TestOpendir();'
 	});
 	$("#exec_deos2").click(function(){
 	console.log($('#ip_select_deos2 option:selected').val());
-    Spinner_deos_start();
+    Spinner_deos2_start();
 		var data = {
 			'Method': 'SendDSE',
       'Name': $('#script_select_deos2 option:selected').val(),
