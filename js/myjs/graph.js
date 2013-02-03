@@ -1,12 +1,12 @@
 function Graph_init(){
-  Cpu_get();
-  Memory_get();
-  Network_get();
-  TriggerLog_get();
-  NetArch_get();
-  setTimeout( function() {
-      Graph_init();
-  },5000);
+  //Cpu_get();
+  //Memory_get();
+  //Network_get();
+  //TriggerLog_get();
+  //NetArch_get();
+  //setTimeout( function() {
+  //    Graph_init();
+  //},5000);
 }
 
 function NetArch_get() {
